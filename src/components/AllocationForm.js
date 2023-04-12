@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { AppContext } from '../context/AppContext';
+import '../App.css'
 
 const AllocationForm = (props) => {
     const { budget, currency, dispatch, remaining } = useContext(AppContext);
@@ -58,15 +59,16 @@ const AllocationForm = (props) => {
                         <option defaultValue value="Add" name="Add">Add</option>
                         <option value="Reduce" name="Reduce">Reduce</option>
                     </select>
-
-                    <input
-                        required='required'
-                        type='number'
-                        id='cost'
-                        value={cost}
-                        style={{ marginLeft: '2rem', size: 5 }}
-                        onChange={(event) => setCost(event.target.value)}>
-                    </input>
+                    <label style={{ marginLeft: '2rem', height: 30, size: 5 }}> {currency}
+                        <input
+                            required='required'
+                            type='number'
+                            id='cost'
+                            value={cost}
+                            style={{ marginLeft: 2, height: 30, size: 5 }}
+                            onChange={(event) => setCost(event.target.value)}>
+                        </input>
+                    </label>
 
                     <button className="btn btn-primary" onClick={submitEvent} style={{ marginLeft: '2rem' }}>
                         Save
