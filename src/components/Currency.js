@@ -15,10 +15,6 @@ const Currency = () => {
       payload: newCurrency,
   });
 
-
-    //  button
-    // state: dropped, setDropped
-    // 
   };
 
   let currencyString = ""
